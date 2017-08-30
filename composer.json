@@ -1,6 +1,6 @@
 {
     "name": "antaresprojectgmbh/lti",
-    "version" : "3.0.2",
+    "version" : "3.0.3",
     "description": "LTI Tool Provider Library",
     "keywords": ["lti"],
     "homepage": "https://www.imsglobal.org/lti",
@@ -17,7 +17,7 @@
     },
     "autoload":{
         "psr-4": {
-            "IMSGlobal\\LTI\\": "src/"
+            "antaresprojectgmbh\\LTI\\": "src/"
         }
     }
 }
