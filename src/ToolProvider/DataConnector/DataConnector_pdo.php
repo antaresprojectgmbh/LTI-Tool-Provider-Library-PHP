@@ -705,6 +705,16 @@ class DataConnector_pdo extends DataConnector
             $primaryResourceLinkId = $resourceLink->primaryResourceLinkId;
         }
         $id = $resourceLink->getRecordId();
+
+        $tmp = clone $resourceLink;
+        $this->loadResourceLink($tmp);
+
+        if ($tmp->getSettings()["custom_content_item_id"] != $resourceLink->getSettings()['custom_content_item_id']){
+            if (isset($tmp->getSettings()['custom_content_item_id'])) {;
+                $this->deleteResourceLink($tmp);
+            }
+        };
+
         if (empty($id)) {
             $sql = "INSERT INTO {$this->dbTableNamePrefix}" . DataConnector::RESOURCE_LINK_TABLE_NAME . ' (consumer_pk, context_pk, ' .
                    'lti_resource_link_id, settings, primary_resource_link_pk, share_approved, created, updated) ' .
