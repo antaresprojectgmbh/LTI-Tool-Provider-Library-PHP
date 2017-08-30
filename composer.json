@@ -17,7 +17,7 @@
     },
     "autoload":{
         "psr-4": {
-            "antaresprojectgmbh\\LTI\\": "src/"
+            "IMSGlobal\\LTI\\": "src/"
         }
     }
 }
